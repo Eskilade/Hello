@@ -8,8 +8,10 @@ jobs:
       - uses: actions/setup-python@v2
       - name: Install dependencies
         run: |
-          sudo apt-get install -y plantuml
-          pip install sphinx sphinx_rtd_theme sphinxcontrib-plantuml
+          sudo apt-get update
+          sudo apt-get install -y plantuml doxygen
+          curl -sSL https://github.com/sass/dart-sass/releases/download/1.49.7/dart-sass-1.49.7-linux-x64.tar.gz | tar -xzvf - --strip-components=1 -C ~/.local/bin dart-sass/sass
+          pip install sphinx sphinx_rtd_theme sphinxcontrib-plantuml sphinxcontrib-doxylink
       - name: Sphinx build
         run: |
           mkdir doc_duild
