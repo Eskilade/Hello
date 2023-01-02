@@ -3,3 +3,4 @@ artifacts/
 *.swo
 tags
 compile_commands.json
+build
