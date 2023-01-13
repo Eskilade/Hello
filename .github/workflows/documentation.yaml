@@ -14,10 +14,9 @@ jobs:
           pip install sphinx sphinx_rtd_theme sphinxcontrib-plantuml sphinxcontrib-doxylink
       - name: Sphinx build
         run: |
-          mkdir doc_duild
           doxygen doc/doxygen/Hello/Doxyfile
-          doxysphinx build doc doc_duild doc/doxygen/Hello/Doxyfile
-          sphinx-build doc doc_duild
+          doxysphinx build doc doc_build doc/doxygen/Hello/Doxyfile
+          sphinx-build -a doc doc_build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
