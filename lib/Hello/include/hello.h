@@ -4,7 +4,8 @@
 /// @param name The name to be greeted
 /// @rst 
 ///  .. uml::
-///  Alice -> Bob: Hi!
-///  Alice <- Bob: How are you?
+///
+///     Alice -> Bob: Hi!
+///     Alice <- Bob: How are you?
 /// @endrst
 void greet(std::string name);
