@@ -15,4 +15,4 @@ word-count
    usage.rst
    credit.rst
    exercises.rst
-   /doc/doxygen/Hello/html/index
+   doxygen/Hello/html/globals_func
