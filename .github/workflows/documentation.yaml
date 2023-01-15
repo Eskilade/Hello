@@ -5,13 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y plantuml doxygen
-          curl -sSL https://github.com/sass/dart-sass/releases/download/1.49.7/dart-sass-1.49.7-linux-x64.tar.gz | tar -xzvf - --strip-components=1 -C ~/.local/bin dart-sass/sass
-          pip install sphinx sphinx_rtd_theme sphinxcontrib-plantuml sphinxcontrib-doxylink
+          pip install sphinx sphinx_rtd_theme sphinxcontrib-plantuml sphinxcontrib-doxylink doxysphinx
       - name: Sphinx build
         run: |
           doxygen doc/doxygen/Hello/Doxyfile
