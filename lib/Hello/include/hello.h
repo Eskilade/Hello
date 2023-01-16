@@ -5,7 +5,7 @@
 /// @rst 
 ///  .. uml::
 ///
-///     Alice -> Bob: Hi!
-///     Alice <- Bob: How are you?
+///     Christian -> Petar: Hi!
+///     Petar <- Christian: How are you?
 /// @endrst
 void greet(std::string name);
